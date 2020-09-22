@@ -980,7 +980,7 @@ See [here](./console/policy-management/getgoogleaccount.md) to know how to get t
 **USB File transfer** <br>If you’d like device users to be able to transfer files to or from the device using a USB cable or flash drive, set USB file transfer to 'On'; if you don’t, set it to 'Off'.<br/>
 **Google Assistant** <br> If you’d like device users to be able to use voice command via Google Assistant on devices where this is supported, set Google Assistant to 'On'; if you don’t, set it to 'Off'.
 
-***Tip:  On a few devices, this setting may need to be on if you wish to have Google Play Store show up on the device.**
+***Tip:  On a few devices, this setting may need to be on if you wish to have Google Play Store show up on the device.***
 
 **Local App Install**<br>This feature allows installation of apps from unknown sources on the device. To enable this on the device, the user needs to follow these instructions. **Settings >Apps and Notifications > Special App Permissions> Install Unknown Apps** and choose the route they wish to install the apps from. For example, if the device user chooses Chrome, they will be able to download and install apps from the Chrome browser on the device. If turned off, the device user will not be allowed to install apps from any unknown sources.</br>
 
@@ -2103,7 +2103,7 @@ there is an option to Remote Control the device.
 
 This means you may interact with the remote device using your mouse as though you were physically touching the screen.
 
-Since Esper has obtained membership in SEAP (Samsung Enterprise Alliance Program), 
+As Esper has obtained membership in SEAP (Samsung Enterprise Alliance Program), 
 our platform now supports Samsung Knox-specific extensions and as a result can now provide the Remote Control 
 feature available for any Esper provisioned Samsung devices running Knox 3.x or newer.
 
@@ -2119,11 +2119,11 @@ Note that the widget is only available in full screen mode.
 
 Some devices do not have soft keys for home, back and recent, using physical keys on the device itself instead. 
 
-On such devices, a virtual set of keys appear at the bottom right corner of the Remote Control screen.
+On such devices, a virtual set of keys will appear at the bottom right corner of the Remote Control screen.
 
-When in Full screen mode, the widget includes the hard keys. 
+When in full screen mode, the widget includes the hard keys. 
 
-You can grab and move the widget to a different location on your screen as you wish.
+You can select and move the widget to a different location on your screen as you wish.
 
 ![Reboot](./assets/NewConsole/Screenshot.png)
 
@@ -2153,7 +2153,7 @@ If the device user taps **Decline**, the report will not be shared and the statu
 
 ### Connecting to a Device Using Secure Remote ADB
 
-Android Debug Bridge (ABD) is a command-line tool that lets you communicate with Android devices using a Unix shell. With that connection up and running, you can run a variety of commands on the device.
+Android Debug Bridge (ADB) is a command-line tool that lets you communicate with Android devices using a Unix shell. With that connection up and running, you can run a variety of commands on the device.
 
 #### Esper-Provisioned Android Devices
 
@@ -2165,23 +2165,23 @@ At the bottom of the page, click **ADB Access**.
 
 ![Reboot](./assets/NewConsole/ADBAccess.png)
 
-To start you simply need to switch **ADB** to on:
+To start, toggle **ADB** to 'On':
 
 ![Reboot](./assets/NewConsole/ADB.png)
 
-For security reasons, sessions are limited to 30 minutes. Simply establish a new session if you need more than 30 minutes.
+For security reasons, sessions are limited to 30 minutes. If you need more than 30 minutes, please establish a new session.
 
 #### Stock Android Devices
 
-For stock Android devices, you will also need to open the device port for the Esper Agent running on the device to set up the secure connection to the Esper Platform.
+For stock Android devices, you will need to open the device port for the Esper Agent running on the device to set up a secure connection to the Esper Platform.
 
-You will need a PC running some form of terminal with Android Debug Bridge (ADB)—approving the permissions asked for on the device—and the Esper Command-Line Interface (CLI) installed on the PC you plan to use for your remote debugging session.
+You will need a PC running some form of terminal with Android Debug Bridge (ADB) approving the permissions asked for on the device, and the Esper Command-Line Interface (CLI) installed on the PC you plan to use for your remote debugging session.
 
 Connect the Android device to the PC using a USB cable and run the following command to enable ADB over TCP/IP:
 
 ***adb tcpip 5555***
 
-The Android device should return the following:
+The device should return the following message:
 
 ***restarting in TCP mode port: 5555***
 
@@ -2189,15 +2189,13 @@ Enter the espercli command secureadb giving it the device ID for your debugging 
 
 ***espercli secureadb connect -d ESP-DMO-AZ40***
 
-:::tip 
-Be sure to first have the Esper CLI configured for your Esper Endpoint with the required Enterprise ID and a valid API key.
-:::
+***Tip: Be sure to have the Esper CLI configured for your Esper Endpoint with the required Enterprise ID and a valid API key.***
 
-The Android device should return the following:
+The device should return the following message:
 
 ***Initiating Remote ADB Session. This may take a few seconds…***
 
-After a few seconds, the Android device should return the following. The endpoint address shown below will likely be different for your session:
+After a few seconds, the device should return the following. The endpoint address shown below will likely be different for your session:
  
 *Secure ADB Client
 Please connect ADB client to the following endpoint: 127.0.0.1 : 51556
@@ -2215,17 +2213,18 @@ You’ll get this message back:
 
 You now have a secure remote ADB session with that device.
 
-:::warning
-Until the device is rebooted, you’ll be able to connect to the device remotely using Esper CLI. After rebooting, you’ll need to re-establish the ADB connection.
-:::
+**Warning: Until the device is rebooted, you’ll be able to connect to the device remotely using Esper CLI. After rebooting, you’ll need to re-establish the ADB connection.**
 
 ## Groups
 
-The **Groups** section enables you to assign devices to groups. Once devices are assigned to groups, you can use a single command to perform an action on all the devices in the group. You can, for example, apply a Compliance Policy to all the devices in the group at once.
+The **Groups** section enables you to assign devices to groups. 
+Once devices are assigned to groups, you can use a single command to perform an action on all the devices in the group. 
+You can, for example, apply a Compliance Policy to all the devices in the group at once.
 
 ![Groups](./assets/NewConsole/GroupsTiles.png)
 
-There is a "Default" group called where devices are automatically added unless otherwise specified during provisioning via template. It is also used as the collection point when devices are moved between groups.
+There is a "Default" group called where devices are automatically added unless otherwise specified during provisioning via template. 
+It is also used as the collection point when devices are moved between groups.
 
 ### Creating a Group
 
@@ -2237,7 +2236,10 @@ Enter a unique name in the text box and click **Create**.
 
 ![Groups](./assets/NewConsole/GroupCreateName.png)
 
-The next step is to add devices to the group from the *Default group *(in this screen called *All devices*). This means you first have to remove any devices you want in the new group from any other group they are in to put them in the Default group. To move devices into your new group from the Default group, click the checkbox to the left of the names of the devices that need to be moved and click **Add Selected**, or for a single device once it is selected click on the + button that appears to the right.
+The next step is to add devices to the group from the *Default group *(in this screen called *'All Devices'*). 
+You will first have to remove any devices you want in the new group from any other group they are in, in order to put them in the Default group. 
+To move devices into your new group from the Default group, click the checkbox to the left of the names of the devices that 
+need to be moved and click **Add Selected**, or for a single device once it is selected, click on the + button that appears to the right.
 
 ![Groups](./assets/NewConsole/GroupAddDevices.png)
 
@@ -2245,42 +2247,43 @@ Devices can be moved back to the Default Group by selecting the checkbox next to
 
 Once the desired devices have been moved to the Group, click **Save**.
 
-You can also create a new group when creating a new [Provisioning Template](./console.md#provisioning-templates). In the Group section on the new template, you can create a group such that any device provisioned using the said template will fall in the newly created and selected group.
+You can also create a new group when creating a new [Provisioning Template](./console.md#provisioning-templates). 
+In the Group section on the new template, you can create a group such that any device provisioned using said template will fall under the newly created and selected group.
 
 ### Moving Devices Between Groups
 
 Moving devices from one group to another group requires two steps:
 
-   - First remove the device or devices from the group they are in. This will move them to the Default group.
+   - First, remove the device or devices from the group they are in. This will move them to the Default group.
    - Navigate to the destination group and add the devices from the Default group.
 
 To remove one or more devices from a group, first click **View Details** for that group in the group’s tile:
 
 ![Groups](./assets/NewConsole/GroupViewDetails.png)
 
-Then click the ellipses on the left side of the screen and select **Remove device**.
+Then, click the ellipses on the left side of the screen and select **Remove dDevice**.
 
 ![Groups](./assets/NewConsole/GroupRemoveDevice.png)
 
-Your screen is now in multi-select mode. Click on each device you wish to remove from the group.
+Your screen is now in multi-select mode. Click on each device you would like to remove from the group.
 
 ![Groups](./assets/NewConsole/GroupManageSelect.png)
 
-Click on the **Remove selected devices** button in the bottom right hand corner. The following dialog will appear asking you to confirm the deletion.
+Click on the **Remove Selected Devices** button in the bottom right hand corner. The following dialog will appear asking you to confirm the deletion:
 
 ![Groups](./assets/NewConsole/DeviceDeleteConfirm.png)
 
-You will then see a success toast message in the bottom left corner of your screen. The devices are now in the Default group.
+You will then see a 'Success' toast message confirmation on the bottom left corner of your screen. The devices are now in the Default group.
 
-You can also remove individual devices by clicking on the ellipses on the device’s tile and click on **Remove from group**. This is also available in the [Devices view](./console.md#devices).
+You can also remove individual devices by clicking on the ellipses on the device’s tile and click on **Remove From Group**. This is also available in the [Devices view](./console.md#devices).
 
 ![Groups](./assets/NewConsole/DeviceRemoveGroup.png)
 
-Now click **View Details** for the group you want to move these devices to. Click on the **Add device** button.
+Click **View Details** for the group you want to move these devices to. Click on the **Add Device** button.
 
 ![Groups](./assets/NewConsole/AddDevice.png)
 
-Now use the same process to add the desired devices to move to the group from the Default Group as described in [Creating a Group](./console.md#creating-a-group).
+You can then use the same process to add the desired devices to a new group from the Default Group as described in [Creating a Group](./console.md#creating-a-group).
 
 ### Deleting a Group
 
@@ -2288,15 +2291,15 @@ To remove one or more groups, first click on **Delete Groups**.
 
 ![Groups](./assets/NewConsole/GroupDelete.png)
 
-Then select the tiles for the groups you want to delete by clicking on each one. Now click **Delete Selected Groups** at the bottom right of the screen. 
+Then, select the tiles for the groups you want to delete by clicking on each one. Now, click **Delete Selected Groups** at the bottom right of the screen. 
 
 ![Groups](./assets/NewConsole/GroupsSelect.png)
 
-A dialog box will appear to confirm the action. Click on **Delete groups** to complete the deletion.
+A dialog box will appear to confirm the action. Click on **Delete Groups** to complete the deletion.
 
 ![Groups](./assets/NewConsole/GroupDeleteConfirm.png)
 
-Once the group or groups are deleted, you will see a success toast message in the lower left corner of your screen. Any devices that were part of the deleted group will be moved to the Default group.
+Once the group or groups are deleted, you will see a 'Success' toast message confirmation in the lower left corner of your screen. Any devices that were part of the deleted group will be moved to the Default group.
 
 ### Searching for a Group
 
@@ -2320,46 +2323,48 @@ You will find more information about individual devices in the [Devices](./conso
 
 You can filter the list of devices using one or more of six filters:
 
-   - Under provisioning — Devices in the group that are currently undergoing provisioning
-   - Online devices — Devices in the group that are currently active (online)
-   - Offline devices — Devices in the group that are currently inactive (offline)
-   - Devices at risk — Devices in the group that are at high, medium or low security risk
-   - Devices with low battery — Devices in the group with less than 15% charge in their batteries
-   - Recently added devices — Devices in this group which were provisioned in the last 3 days
+   - Under provisioning: Devices in the group that are currently undergoing provisioning
+   - Online devices: Devices in the group that are currently active (online)
+   - Offline devices: Devices in the group that are currently inactive (offline)
+   - Devices at risk: Devices in the group that are at high, medium or low security risk
+   - Devices with low battery: Devices in the group with less than 15% charge in their batteries
+   - Recently added devices: Devices in this group which were provisioned in the last three days
    
-You may click on “Clear all filters” (extreme right) to view the complete list of devices again. 
+Click on “Clear all filters” (extreme right) to view the complete list of devices again. 
 
 ![Groups](./assets/NewConsole/ClearAllFilters.png)
 
 #### The Settings Tab
 
-The Settings tab enables you to change the settings on all the devices in a group as a mass action. This includes taking actions like rebooting, locking the screens, and requesting a heartbeat.
+The Settings tab enables you to change the settings on all the devices in a group as a mass action. 
+This includes taking actions like rebooting, locking the screens, and requesting a heartbeat.
 
 ![Groups](./assets/NewConsole/GroupSettings.png)
 
-:::tip 
-Any actions initiated to a group are immediate, they are not queued. Devices that are offline (inactive) will be unable to receive the command for these actions. Esper employs a combination of popdowns and slide outs to give you both status and summary of an action taken with a group of devices.
-:::
+***Tip: Any actions initiated to a group are immediate, they are not queued. Devices that are offline (inactive) will be unable to receive the command for these actions. Esper employs a combination of popdowns and slide outs to give you both status and summary of an action taken with a group of devices.***
+
 
 **Reboot**
 
-When you click **Reboot**, the Esper Console will send the command to reboot all the active devices in the group. A popdown will show the progress of the action, indicating the number of successful and unsuccessful attempts. 
+When you click **Reboot**, the Esper Console will send the command to reboot all the active devices in the group. 
+A popdown will show the progress of the action, indicating the number of successful and unsuccessful attempts. 
 
 ![Groups](./assets/NewConsole/Reboot.png)
 
-Click on **See details** to see the status of each of the devices in the group.
+Click on **See Details** to see the status of each of the devices in the group.
 
 ![Groups](./assets/NewConsole/RebootDetails.png)
 
-Once the set of reboot commands are sent, a success toast notification will appear in the bottom left corner of the screen.
+Once the set of reboot commands are sent, a 'Success' toast notification will appear in the bottom left corner of the screen.
 
 **Screen Lock**
 
-When you click **Screen lock**, the Esper Console will send the command to lock screen to all the active devices in the group. A popdown will show the progress of the action, indicating the number of successful and unsuccessful attempts.
+When you click **Screen Lock**, the Esper Console will send the command to lock screen to all the active devices in the group. 
+A popdown will show the progress of the action, indicating the number of successful and unsuccessful attempts.
 
 ![Groups](./assets/NewConsole/ScreenLockStatus.png)
 
-Click on **See details** to see the status of each of the devices in the group.
+Click on **See Details** to see the status of each of the devices in the group.
 
 ![Groups](./assets/NewConsole/LockStatus.png)
 
@@ -2367,11 +2372,12 @@ Once the set of screen lock commands are sent, a success toast will appear in th
 
 **Heart Beat**  
 
-When you click **Heart beat**, the Esper Console will attempt to ping all the devices in the group. A popdown will show the progress of the action, indicating the number of successful and unsuccessful attempts. 
+When you click **Heartbeat**, the Esper Console will attempt to ping all the devices in the group. 
+A popdown will show the progress of the action, indicating the number of successful and unsuccessful attempts. 
 
 ![Groups](./assets/NewConsole/Heartbeat.png)
 
-Click on **See details** and a slide out will appear.
+Click on **See Details** and a slide out will appear.
 
 ![Groups](./assets/NewConsole/HeartbeatDetails.png)
 
@@ -2379,7 +2385,8 @@ Once the set of ping commands are sent, a success toast will appear in the botto
 
 **Wipe**
 
-When you click **Wipe**, the Esper Console will send a command to all the devices in the group to reset themselves to original factory settings—much like performing a factory reset. They will be removed from the Esper console. 
+When you click **Wipe**, the Esper Console will send a command to all the devices in the group to reset themselves to original 
+factory settings—much like performing a factory reset. They will be removed from the Esper console. 
 
 If you’d like to wipe external data as part of the same command, click the **Yes** radio button under Wipe external Data. Then click **Confirm**.
 
@@ -2389,7 +2396,7 @@ A popdown will show the progress of the action, indicating the number of success
 
 ![Groups](./assets/NewConsole/Wipe.png)
 
-Click on **See details** and a slide out will appear.
+Click on **See Details** and a slide out will appear.
 
 ![Groups](./assets/NewConsole/WipeDetails.png)
 
@@ -2409,7 +2416,7 @@ This section lets you adjust the display settings of the device.
 
 ![Groups](./assets/NewConsole/DisplayScreenOrientation.png)
 
-Use the **Brightness** slider to Increase or decrease the brightness of the screen.
+Use the **Brightness** slider to increase or decrease the brightness of the screen.
 
 Use the **Screen Orientation** buttons to select your preferred screen orientation, whether auto, landscape, or portrait.
 
@@ -2442,7 +2449,8 @@ Once all changes are made, click **Apply changes** to push them out to the devic
 
 ![Groups](./assets/NewConsole/CancelApplyChanges.png)
 
-A popdown will show the progress of the action or actions, indicating the number of successful and unsuccessful attempts. In this example we changed settings for alarm volume, notification volume, music volume, and ring volume for the group.
+A popdown will show the progress of the action or actions, indicating the number of successful and unsuccessful attempts. 
+In this example we changed settings for alarm volume, notification volume, music volume, and ring volume for the group.
 
 Click on **See details** for any of the popdowns and a slide out will appear specific to that setting.
 
@@ -2456,7 +2464,8 @@ Wi-Fi & Internet enables you to turn Wi-Fi connectivity on or off for all device
 
 ![Groups](./assets/NewConsole/WIFIInternetON.png)
 
-This can be done if the device has an alternative connection available such as cellular network via SIM card or Ethernet. You will need to Confirm turning it off before this action is pushed to the group.
+This can be done if the device has an alternative connection available such as cellular network via SIM card or Ethernet. 
+You will need to Confirm turning it off before this action is pushed to the group.
 
 ![Groups](./assets/NewConsole/WIFIConfirm.png)
 
@@ -2470,9 +2479,7 @@ Click on **See details** and a slide out will appear.
 
 Once the set of Wi-Fi commands are sent, a success toast message will appear at the bottom left corner of the screen.
 
-:::tip
-If you switch off Wi-Fi when no other connection is available, Esper will turn Wi-Fi back on after 10 seconds if no other internet connection is available so Esper can maintain communication with the cloud backend.
-:::
+***Tip: If you switch off Wi-Fi when no other connection is available, Esper will turn Wi-Fi back on after 10 seconds if no other internet connection is available so Esper can maintain communication with the cloud backend.***
 
 **Location**
 
@@ -2484,7 +2491,7 @@ A popdown will show the progress of the action, indicating the number of success
 
 ![Groups](./assets/NewConsole/GPS.png)
 
-Click on **See details** and a slide out will appear.
+Click on **See Details** and a slide out will appear.
 
 ![Groups](./assets/NewConsole/GPSStateDetails.png)
 
@@ -2500,7 +2507,7 @@ A popdown will show the progress of the action, indicating the number of success
 
 ![Groups](./assets/NewConsole/BluetoothStatus.png)
 
-Click on **See details** and a slide out will appear.
+Click on **See Details** and a slide out will appear.
 
 ![Groups](./assets/NewConsole/BluetoothCommandstatus.png)
 
@@ -2512,7 +2519,7 @@ ADB Access enables you to turn Android Debug Bridge on or off for all the device
 
 ![Groups](./assets/NewConsole/ADBAccess1.png)
 
-Clicking **ON** will then open a drop down menu to select the desired session duration. Once selected, click **Apply changes(( to push the command to the devices, or **Cancel** if you wish to keep the current settings.
+Clicking **ON** will then open a drop down menu to select the desired session duration. Once selected, click **Apply Changes(( to push the command to the devices, or **Cancel** if you wish to keep the current settings.
 
 ![Groups](./assets/NewConsole/CancelApplyChanges.png)
 
@@ -2520,7 +2527,7 @@ A popdown will show the progress of the action, indicating the number of success
 
 ![Groups](./assets/NewConsole/ADBON.png)
 
-Click on **See details** and a slide out will appear.
+Click on **See Details** and a slide out will appear.
 
 ![Groups](./assets/NewConsole/CommandStatus.png)
 
@@ -2554,7 +2561,7 @@ When you apply a Compliance Policy to a group, all the online devices will recei
 
 ![Groups](./assets/NewConsole/QueueRequests.png)
 
-Click **Apply policy** to push the Compliance Policy out to the group. A slide out appears displaying the status of applying the new policy to the devices in the group.
+Click **Apply Policy** to push the Compliance Policy out to the group. A slide out appears displaying the status of applying the new policy to the devices in the group.
 
 ![Groups](./assets/NewConsole/CompPolicySuccess.png)
 
@@ -2562,7 +2569,7 @@ If you selected Queue requests for offline devices, then any offline devices wil
 
 ![Groups](./assets/NewConsole/StatusDetails.png)
 
-If you closed out of the slide out and wish to return later to check the status of the queued devices, simply go to the **Event Feed** and select **More details** for the event where you applied, this will take you back to the slide out and you can view the status.
+If you closed out of the slide out and wish to return later to check the status of the queued devices, simply go to the **Event Feed** and select **More Details** for the event where you applied, this will take you back to the slide out and you can view the status.
 
 ### The Apps Tab
 
@@ -2570,17 +2577,13 @@ The **Apps** tab lets you manage the apps on all the devices in the group. This 
 
 ![Groups](./assets/NewConsole/GroupApps.png)
 
-:::tip 
-If you wish to update a currently installed app to a new version, you install that new version using any of the available means.
-:::
+***Tip: If you wish to update a currently installed app to a new version, you install that new version using any of the available means.***
 
-:::tip
-You cannot uninstall in-ROM apps (called Preloaded apps). Instead you can **Disable** these apps using **Approvals**.
-:::
+***Tip: You cannot uninstall in-ROM apps (called Preloaded apps). Instead you can **Disable** these apps using **Approvals**.***
 
 #### Install/Uninstall
 
-The Apps section lets you install or uninstall both privately uploaded apps—also known as Enterprise Apps—and Google Play apps to the groups immediately. The action will only be performed on online devices. 
+The Apps section lets you install or uninstall both privately uploaded apps (Also known as Enterprise Apps) and Google Play apps to the groups immediately. The action will only be performed on online devices. 
 
 To install an app on all the devices in the group first select **Install/Uninstall**, then select **Install** from the **Select App Action** dropdown. 
 
@@ -2590,7 +2593,7 @@ Then select the app you’d like to install from the **Select App** dropdown. Yo
 
 ![Groups](./assets/NewConsole/GroupInstallSelectApp.png)
 
-Once you’ve selected an app, its details will appear in the **App Details Preview** section, including the app’s version, package name, and app type—that is, whether it’s an Enterprise app or a Google app.
+Once you’ve selected an app, its details will appear in the **App Details Preview** section, including the app’s version, package name, and app type—-That is, whether it’s an Enterprise app or a Google app.
 
 ![Groups](./assets/NewConsole/GroupInstallApp.png)
 
@@ -2602,7 +2605,7 @@ Group Uninstall works much the same. Simply select **Uninstall** rather than **I
 
 #### Scheduled Install
 
-This section lets you schedule an app installation or uninstallation for a specific point in the future. To schedule an install or uninstall, first select **Schedule install**.
+This section lets you schedule an app installation or uninstallation for a specific point in the future. To schedule an install or uninstall, first select **Schedule Install**.
 
 ![Groups](./assets/NewConsole/ScheduledInstall.png)
 
