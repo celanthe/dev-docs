@@ -2531,7 +2531,7 @@ Click on **See Details** and a slide out will appear.
 
 ![Groups](./assets/NewConsole/CommandStatus.png)
 
-Once the set of commands are sent, a success toast message will appear at the bottom left corner of the screen.
+Once the set of commands are sent, a 'Success' toast message confirmation will appear at the bottom left corner of the screen.
 
 ### The Event Feed Tab
 
