@@ -1021,7 +1021,7 @@ See [here](./console/policy-management/getgoogleaccount.md) to know how to get t
 **USB File transfer** <br>If you’d like device users to be able to transfer files to or from the device using a USB cable or flash drive, set USB file transfer to 'On'; if you don’t, set it to 'Off'.<br/>
 **Google Assistant** <br> If you’d like device users to be able to use voice command via Google Assistant on devices where this is supported, set Google Assistant to 'On'; if you don’t, set it to 'Off'.
 
-***Tip:  On a few devices, this setting may need to be on if you wish to have Google Play Store show up on the device.**
+***Tip:  On a few devices, this setting may need to be on if you wish to have Google Play Store show up on the device.***
 
 **Local App Install**<br>This feature allows installation of apps from unknown sources on the device. To enable this on the device, the user needs to follow these instructions. **Settings >Apps and Notifications > Special App Permissions> Install Unknown Apps** and choose the route they wish to install the apps from. For example, if the device user chooses Chrome, they will be able to download and install apps from the Chrome browser on the device. If turned off, the device user will not be allowed to install apps from any unknown sources.</br>
 
@@ -2027,7 +2027,7 @@ there is an option to Remote Control the device.
 
 This means you may interact with the remote device using your mouse as though you were physically touching the screen.
 
-Since Esper has obtained membership in SEAP (Samsung Enterprise Alliance Program), 
+As Esper has obtained membership in SEAP (Samsung Enterprise Alliance Program), 
 our platform now supports Samsung Knox-specific extensions and as a result can now provide the Remote Control 
 feature available for any Esper provisioned Samsung devices running Knox 3.x or newer.
 
@@ -2043,11 +2043,11 @@ Note that the widget is only available in full screen mode.
 
 Some devices do not have soft keys for home, back and recent, using physical keys on the device itself instead. 
 
-On such devices, a virtual set of keys appear at the bottom right corner of the Remote Control screen.
+On such devices, a virtual set of keys will appear at the bottom right corner of the Remote Control screen.
 
-When in Full screen mode, the widget includes the hard keys. 
+When in full screen mode, the widget includes the hard keys. 
 
-You can grab and move the widget to a different location on your screen as you wish.
+You can select and move the widget to a different location on your screen as you wish.
 
 ![Reboot](./assets/NewConsole/Screenshot.png)
 
@@ -2077,7 +2077,7 @@ If the device user taps **Decline**, the report will not be shared and the statu
 
 ### Connecting to a Device Using Secure Remote ADB
 
-Android Debug Bridge (ABD) is a command-line tool that lets you communicate with Android devices using a Unix shell. With that connection up and running, you can run a variety of commands on the device.
+Android Debug Bridge (ADB) is a command-line tool that lets you communicate with Android devices using a Unix shell. With that connection up and running, you can run a variety of commands on the device.
 
 #### Esper-Provisioned Android Devices
 
@@ -2089,23 +2089,23 @@ At the bottom of the page, click **ADB Access**.
 
 ![Reboot](./assets/NewConsole/ADBAccess.png)
 
-To start you simply need to switch **ADB** to on:
+To start, toggle **ADB** to 'On':
 
 ![Reboot](./assets/NewConsole/ADB.png)
 
-For security reasons, sessions are limited to 30 minutes. Simply establish a new session if you need more than 30 minutes.
+For security reasons, sessions are limited to 30 minutes. If you need more than 30 minutes, please establish a new session.
 
 #### Stock Android Devices
 
-For stock Android devices, you will also need to open the device port for the Esper Agent running on the device to set up the secure connection to the Esper Platform.
+For stock Android devices, you will need to open the device port for the Esper Agent running on the device to set up a secure connection to the Esper Platform.
 
-You will need a PC running some form of terminal with Android Debug Bridge (ADB)—approving the permissions asked for on the device—and the Esper Command-Line Interface (CLI) installed on the PC you plan to use for your remote debugging session.
+You will need a PC running some form of terminal with Android Debug Bridge (ADB) approving the permissions asked for on the device, and the Esper Command-Line Interface (CLI) installed on the PC you plan to use for your remote debugging session.
 
 Connect the Android device to the PC using a USB cable and run the following command to enable ADB over TCP/IP:
 
 ***adb tcpip 5555***
 
-The Android device should return the following:
+The device should return the following message:
 
 ***restarting in TCP mode port: 5555***
 
@@ -2113,15 +2113,13 @@ Enter the espercli command secureadb giving it the device ID for your debugging 
 
 ***espercli secureadb connect -d ESP-DMO-AZ40***
 
-:::tip 
-Be sure to first have the Esper CLI configured for your Esper Endpoint with the required Enterprise ID and a valid API key.
-:::
+***Tip: Be sure to have the Esper CLI configured for your Esper Endpoint with the required Enterprise ID and a valid API key.***
 
-The Android device should return the following:
+The device should return the following message:
 
 ***Initiating Remote ADB Session. This may take a few seconds…***
 
-After a few seconds, the Android device should return the following. The endpoint address shown below will likely be different for your session:
+After a few seconds, the device should return the following. The endpoint address shown below will likely be different for your session:
  
 *Secure ADB Client
 Please connect ADB client to the following endpoint: 127.0.0.1 : 51556
@@ -2139,9 +2137,7 @@ You’ll get this message back:
 
 You now have a secure remote ADB session with that device.
 
-:::warning
-Until the device is rebooted, you’ll be able to connect to the device remotely using Esper CLI. After rebooting, you’ll need to re-establish the ADB connection.
-:::
+**Warning: Until the device is rebooted, you’ll be able to connect to the device remotely using Esper CLI. After rebooting, you’ll need to re-establish the ADB connection.**
 
 ## Devices & Groups
 
@@ -2212,33 +2208,35 @@ There are three ways to view the devices in your Console: Grid, List and Maps. T
 
 ## The Settings Tab
 
-The Settings tab enables you to change the settings on all the devices in a group as a mass action. This includes taking actions like rebooting, locking the screens, and requesting a heartbeat.
+The Settings tab enables you to change the settings on all the devices in a group as a mass action. 
+This includes taking actions like rebooting, locking the screens, and requesting a heartbeat.
 
 ![Groups](./assets/NewConsole/GroupSettings.png)
 
-:::tip 
-Any actions initiated to a group are immediate, they are not queued. Devices that are offline (inactive) will be unable to receive the command for these actions. Esper employs a combination of popdowns and slide outs to give you both status and summary of an action taken with a group of devices.
-:::
+***Tip: Any actions initiated to a group are immediate, they are not queued. Devices that are offline (inactive) will be unable to receive the command for these actions. Esper employs a combination of popdowns and slide outs to give you both status and summary of an action taken with a group of devices.***
+
 
 **Reboot**
 
-When you click **Reboot**, the Esper Console will send the command to reboot all the active devices in the group. A popdown will show the progress of the action, indicating the number of successful and unsuccessful attempts. 
+When you click **Reboot**, the Esper Console will send the command to reboot all the active devices in the group. 
+A popdown will show the progress of the action, indicating the number of successful and unsuccessful attempts. 
 
 ![Groups](./assets/NewConsole/Reboot.png)
 
-Click on **See details** to see the status of each of the devices in the group.
+Click on **See Details** to see the status of each of the devices in the group.
 
 ![Groups](./assets/NewConsole/RebootDetails.png)
 
-Once the set of reboot commands are sent, a success toast notification will appear in the bottom left corner of the screen.
+Once the set of reboot commands are sent, a 'Success' toast notification will appear in the bottom left corner of the screen.
 
 **Screen Lock**
 
-When you click **Screen lock**, the Esper Console will send the command to lock screen to all the active devices in the group. A popdown will show the progress of the action, indicating the number of successful and unsuccessful attempts.
+When you click **Screen Lock**, the Esper Console will send the command to lock screen to all the active devices in the group. 
+A popdown will show the progress of the action, indicating the number of successful and unsuccessful attempts.
 
 ![Groups](./assets/NewConsole/ScreenLockStatus.png)
 
-Click on **See details** to see the status of each of the devices in the group.
+Click on **See Details** to see the status of each of the devices in the group.
 
 ![Groups](./assets/NewConsole/LockStatus.png)
 
@@ -2250,7 +2248,7 @@ When you click **Heartbeat**, the Esper Console will attempt to ping all the dev
 
 ![Groups](./assets/NewConsole/Heartbeat.png)
 
-Click on **See details** and a slide out will appear.
+Click on **See Details** and a slide out will appear.
 
 ![Groups](./assets/NewConsole/HeartbeatDetails.png)
 
@@ -2268,7 +2266,7 @@ A popdown will show the progress of the action, indicating the number of success
 
 ![Groups](./assets/NewConsole/RFR2.png)
 
-Click on **See details** and a slide out will appear.
+Click on **See Details** and a slide out will appear.
 
 ![Groups](./assets/NewConsole/WipeDetails.png)
 
@@ -2288,7 +2286,7 @@ This section lets you adjust the display settings of the device.
 
 ![Groups](./assets/NewConsole/DisplayScreenOrientation.png)
 
-Use the **Brightness** slider to Increase or decrease the brightness of the screen.
+Use the **Brightness** slider to increase or decrease the brightness of the screen.
 
 Use the **Screen Orientation** buttons to select your preferred screen orientation, whether auto, landscape, or portrait.
 
@@ -2325,7 +2323,8 @@ Once all changes are made, click **Apply changes** to push them out to the devic
 
 ![Groups](./assets/NewConsole/CancelApplyChanges.png)
 
-A popdown will show the progress of the action or actions, indicating the number of successful and unsuccessful attempts. In this example we changed settings for alarm volume, notification volume, music volume, and ring volume for the group.
+A popdown will show the progress of the action or actions, indicating the number of successful and unsuccessful attempts. 
+In this example we changed settings for alarm volume, notification volume, music volume, and ring volume for the group.
 
 Click on **See details** for any of the popdowns and a slide out will appear specific to that setting.
 
@@ -2339,7 +2338,8 @@ Wi-Fi & Internet enables you to turn Wi-Fi connectivity on or off for all device
 
 ![Groups](./assets/NewConsole/WIFIInternetON.png)
 
-This can be done if the device has an alternative connection available such as cellular network via SIM card or Ethernet. You will need to Confirm turning it off before this action is pushed to the group.
+This can be done if the device has an alternative connection available such as cellular network via SIM card or Ethernet. 
+You will need to Confirm turning it off before this action is pushed to the group.
 
 ![Groups](./assets/NewConsole/WIFIConfirm.png)
 
@@ -2353,9 +2353,7 @@ Click on **See details** and a slide out will appear.
 
 Once the set of Wi-Fi commands are sent, a success toast message will appear at the bottom left corner of the screen.
 
-:::tip
-If you switch off Wi-Fi when no other connection is available, Esper will turn Wi-Fi back on after 10 seconds if no other internet connection is available so Esper can maintain communication with the cloud backend.
-:::
+***Tip: If you switch off Wi-Fi when no other connection is available, Esper will turn Wi-Fi back on after 10 seconds if no other internet connection is available so Esper can maintain communication with the cloud backend.***
 
 **Location**
 
@@ -2367,7 +2365,7 @@ A popdown will show the progress of the action, indicating the number of success
 
 ![Groups](./assets/NewConsole/GPS.png)
 
-Click on **See details** and a slide out will appear.
+Click on **See Details** and a slide out will appear.
 
 ![Groups](./assets/NewConsole/GPSStateDetails.png)
 
@@ -2383,7 +2381,7 @@ A popdown will show the progress of the action, indicating the number of success
 
 ![Groups](./assets/NewConsole/BluetoothStatus.png)
 
-Click on **See details** and a slide out will appear.
+Click on **See Details** and a slide out will appear.
 
 ![Groups](./assets/NewConsole/BluetoothCommandstatus.png)
 
@@ -2395,7 +2393,7 @@ ADB Access enables you to turn Android Debug Bridge on or off for all the device
 
 ![Groups](./assets/NewConsole/ADBAccess1.png)
 
-Clicking **ON** will then open a drop down menu to select the desired session duration. Once selected, click **Apply changes(( to push the command to the devices, or **Cancel** if you wish to keep the current settings.
+Clicking **ON** will then open a drop down menu to select the desired session duration. Once selected, click **Apply Changes(( to push the command to the devices, or **Cancel** if you wish to keep the current settings.
 
 ![Groups](./assets/NewConsole/CancelApplyChanges.png)
 
@@ -2403,11 +2401,11 @@ A popdown will show the progress of the action, indicating the number of success
 
 ![Groups](./assets/NewConsole/ADBON.png)
 
-Click on **See details** and a slide out will appear.
+Click on **See Details** and a slide out will appear.
 
 ![Groups](./assets/NewConsole/CommandStatus.png)
 
-Once the set of commands are sent, a success toast message will appear at the bottom left corner of the screen.
+Once the set of commands are sent, a 'Success' toast message confirmation will appear at the bottom left corner of the screen.
 
 ### The Event Feed Tab
 
@@ -2437,7 +2435,7 @@ When you apply a Compliance Policy to a group, all the online devices will recei
 
 ![Groups](./assets/NewConsole/QueueRequests.png)
 
-Click **Apply policy** to push the Compliance Policy out to the group. A slide out appears displaying the status of applying the new policy to the devices in the group.
+Click **Apply Policy** to push the Compliance Policy out to the group. A slide out appears displaying the status of applying the new policy to the devices in the group.
 
 ![Groups](./assets/NewConsole/CompPolicySuccess.png)
 
@@ -2445,7 +2443,7 @@ If you selected Queue requests for offline devices, then any offline devices wil
 
 ![Groups](./assets/NewConsole/StatusDetails.png)
 
-If you closed out of the slide out and wish to return later to check the status of the queued devices, simply go to the **Event Feed** and select **More details** for the event where you applied, this will take you back to the slide out and you can view the status.
+If you closed out of the slide out and wish to return later to check the status of the queued devices, simply go to the **Event Feed** and select **More Details** for the event where you applied, this will take you back to the slide out and you can view the status.
 
 ### The Apps Tab
 
@@ -2453,17 +2451,13 @@ The **Apps** tab lets you manage the apps on all the devices in the group. This 
 
 ![Groups](./assets/NewConsole/GroupApps.png)
 
-:::tip 
-If you wish to update a currently installed app to a new version, you install that new version using any of the available means.
-:::
+***Tip: If you wish to update a currently installed app to a new version, you install that new version using any of the available means.***
 
-:::tip
-You cannot uninstall in-ROM apps (called Preloaded apps). Instead you can **Disable** these apps using **Approvals**.
-:::
+***Tip: You cannot uninstall in-ROM apps (called Preloaded apps). Instead you can **Disable** these apps using **Approvals**.***
 
 #### Install/Uninstall
 
-The Apps section lets you install or uninstall both privately uploaded apps—also known as Enterprise Apps—and Google Play apps to the groups immediately. The action will only be performed on online devices. 
+The Apps section lets you install or uninstall both privately uploaded apps (Also known as Enterprise Apps) and Google Play apps to the groups immediately. The action will only be performed on online devices. 
 
 To install an app on all the devices in the group first select **Install/Uninstall**, then select **Install** from the **Select App Action** dropdown. 
 
@@ -2473,7 +2467,7 @@ Then select the app you’d like to install from the **Select App** dropdown. Yo
 
 ![Groups](./assets/NewConsole/GroupInstallSelectApp.png)
 
-Once you’ve selected an app, its details will appear in the **App Details Preview** section, including the app’s version, package name, and app type—that is, whether it’s an Enterprise app or a Google app.
+Once you’ve selected an app, its details will appear in the **App Details Preview** section, including the app’s version, package name, and app type—-That is, whether it’s an Enterprise app or a Google app.
 
 ![Groups](./assets/NewConsole/GroupInstallApp.png)
 
@@ -2485,7 +2479,7 @@ Group Uninstall works much the same. Simply select **Uninstall** rather than **I
 
 #### Scheduled Install
 
-This section lets you schedule an app installation or uninstallation for a specific point in the future. To schedule an install or uninstall, first select **Schedule install**.
+This section lets you schedule an app installation or uninstallation for a specific point in the future. To schedule an install or uninstall, first select **Schedule Install**.
 
 ![Groups](./assets/NewConsole/ScheduledInstall.png)
 

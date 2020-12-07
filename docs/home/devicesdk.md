@@ -8,7 +8,7 @@ Current version: 2.0.6
 
 Release name: Tessarion_MR8
 
-Table of Contents: 
+## Table of Contents: 
 
 - Downloading the SDK
 - Initializing the SDK
@@ -243,7 +243,6 @@ sdk.clearAppData(appsToBeCleared, new EsperDeviceSDK.Callback<ArrayList<String>>
 The API allows you to pass a list of packages whose data is to be cleared. The API will return a null in onResponse if it was successfully able to clear the data of all apps or it shall return the list of packages whose data it was unable to clear.
 
 ### Manage AppOpp Permissions
-
 Android 6.0 introduced new category of permissions named "Special app access" which needs manual process to grant those permissions. Permissions such as "Display over other other apps"and "Usage access"—among many others—are part of this category. Esper Device SDK allows to automatically grant these permissions to your app without the need to ask the user to grant them.
 
 ```java
@@ -270,7 +269,6 @@ sdk.setAppOpMode(AppOpsPermissions.OP_WRITE_SETTINGS, true, new EsperDeviceSDK.C
 The constants of most-used AppOp permission codes is available in the class `io.esper.devicesdk.constants.AppOpsPermissions`.
 
 ### Manage Dock
-
 In Kiosk mode, Device user can access a hidden dock consisting of menu items such as Esper settings app by tapping 3 times on top right corner or by clicking the power button three times. Alternatively, this API can be used to show / hide the dock whenever you need from within your app.
 
 **Show Dock:**
@@ -333,7 +331,6 @@ sdk.enableMobileData(false, new EsperDeviceSDK.Callback<Boolean>() {
 ```
 
 ### Start/Stop Wifi-Hotspot:
-
 Wifi Hotspot can be enabled/disabled with a provision to set SSID and password. 
 
 For password-protected hotspot, a minimum of 8 characters of password needs to be provided, call will be failed for characters less than 8 and greater than 0.

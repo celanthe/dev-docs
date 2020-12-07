@@ -56,24 +56,43 @@ Esper Development Devices running Esper Enhanced Android will always be supporte
 
 ## Infrastructure
 
-Dedicated devices are often behind corporate firewalls, preventing the Esper backend from communicating with them (or vice-versa). Please make sure to whitelist the following URLs and Ports, in case your fleet is running behind such a firewall.
+Dedicated devices are often behind corporate firewalls, preventing Esper backend to communicate with them (or vice-versa).
 
-### URLs
+Please make sure to whitelist the following URLs:
 
-* *.amazonaws.com
-* [mqtt.shoonyacloud.com:1883] (device telemetry/management)
-* [customer endpoint].esper.cloud:443
-* [customer-endpoint]-api.esper.cloud
-* [turn.shoonyacloud.com]
-* 13.52.132.230 (required only if want to allow secure remote ADB access to your devices)
+  *.amazonaws.com
+  mqtt.shoonyacloud.com:1883 (device telemetry/management)
+  [customer-endpoint].esper.cloud:443
+  [customer-endpoint]-api.esper.cloud
+                            *.iot.us-east-1.amazonaws.com:443
+                            *.iot.us-east-2.amazonaws.com:443
+                            *.iot.us-west-1.amazonaws.com:443
+                            *.iot.us-west-2.amazonaws.com:443
+                            *.iot.ap-south-1.amazonaws.com:443
+                           *.s3.amazonaws.com
+                        mqtt-telemetry-prod.esper.cloud:1883
+  turn.shoonyacloud.com for Remote View / Remote Control support
+  13.52.132.230 (required only if want to allow secure remote ADB access to your devices)
 
- 
 For customers that are provisioning devices behind a firewall there are a few additional URLs to allow:
 
-* dpcdownloads.esper.cloud
-* [downloads.esper.io]
-* [services.shoonyacloud.com] (only for serial number-based provisioning)
+  dpcdownloads.esper.cloud
+  downloads.esper.io
+  services.shoonyacloud.com (only for serial number-based provisioning)
 
+* All standard ports open on below URLs:
+
+*.esper.io
+*.esper.cloud
+*shoonyacloud.com
+mqtt-telemetry-prod.esper.cloud:1883
+Mqtt.shoonyacloud.com:1883
+
+For AWS:
+*.s3.amazonaws.com
+.amazonaws.com:443
+
+Note: For more granular firewall rules, please contact support@esper.io
 
 ### Ports
 
