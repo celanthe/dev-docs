@@ -8,7 +8,7 @@ Current version: 2.0.6
 
 Release name: Tessarion_MR8
 
-## Table of Contents: 
+## Table of Contents
 
 - Downloading the SDK
 - Initializing the SDK
@@ -19,14 +19,23 @@ Release name: Tessarion_MR8
 - Activate SDK
 - Start/Stop Wi-Fi Hotspot
 
+### Enable the Esper SDK in your application
 
-## Downloading the SDK
+* In your root-level (project-level) Gradle file (build.gradle), add the following repository URL:
 
-Download the .aar file of the SDK from [here](https://artifact.esper.io/artifactory/esper-device-sdk/io/esper/devicesdk/app/2.0.6225.9/app-2.0.6225.9.aar) and copy the aar inside the libs folder of your project and add the following line to your app’s gradle file inside the dependencies section.
+ maven {
+    url "https://artifact.esper.io/artifactory/esper-device-sdk/"
+}
 
-```java
-implementation files('libs/app-2.0.6225.9')
-```
+* In your module (app-level) Gradle file (usually app/build.gradle), add the dependency for Esper SDK:
+
+**implementation 'io.esper.devicesdk:app:2.0.6404.10'**
+
+or
+
+**implementation 'io.esper.devicesdk:app:+'**
+
+Note that Version 2.0.6404.10 is the current latest version of the Esper SDK, and it can change in every release. Developers can use + instead of version if they need to get the latest version automatically.
 
 ### Initializing the SDK
 
